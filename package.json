@@ -1,0 +1,29 @@
+{
+    "name": "passportjs",
+    "version": "1.0.0",
+    "description": "PassportJS NetNinja tutorial",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app",
+        "dev": "nodemon app"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/mariolazzari/passportjs.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/mariolazzari/passportjs/issues"
+    },
+    "homepage": "https://github.com/mariolazzari/passportjs#readme",
+    "dependencies": {
+        "ejs": "^2.6.1",
+        "express": "^4.16.3",
+        "passport": "^0.4.0",
+        "passport-google-oauth20": "^1.0.0"
+    },
+    "devDependencies": {
+        "nodemon": "^1.17.5"
+    }
+}
