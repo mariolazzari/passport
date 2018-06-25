@@ -8,7 +8,7 @@ passport.serializeUser((user, done) => {
 });
 
 passport.deserializeUser((id, done) => {
-    User.findById(id).then(user => done(null, user.id));
+    User.findById(id).then(user => done(null, user));
 });
 
 passport.use(
@@ -24,12 +24,13 @@ passport.use(
             User.findOne({ googleId: profile.id }).then(currentUser => {
                 if (currentUser) {
                     // user found
-                    dove(null, currentUser);
+                    done(null, currentUser);
                 } else {
                     // create new user
                     new User({
                         username: profile.displayName,
-                        googleId: profile.id
+                        googleId: profile.id,
+                        thumbnail: profile._json.image.url
                     })
                         .save()
                         .then(newUser => done(null, newUser))
